@@ -5,6 +5,12 @@
   --muted: #555;
   --bg: #fff;
   --line: #e5e5e5;
+  --card: #fff;
+  --radius: 14px;
+
+  /* image sizing */
+  --hero-h: 260px;
+  --row-h: 220px;
 }
 
 *{ box-sizing: border-box; }
@@ -13,11 +19,12 @@ body{
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   color: var(--fg);
   background: var(--bg);
-  line-height: 1.5;
+  line-height: 1.55;
+  -webkit-text-size-adjust: 100%;
 }
 
 a{ color: inherit; text-decoration: underline; text-underline-offset: 3px; }
-a:hover{ opacity: .8; }
+a:hover{ opacity: .85; }
 
 .container{
   max-width: var(--maxw);
@@ -27,52 +34,55 @@ a:hover{ opacity: .8; }
 
 header{
   border-bottom: 1px solid var(--line);
-  padding: 18px 0;
+  padding: 14px 0;
 }
 
-.header-row {
+.header-row{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 16px;
+  flex-wrap: wrap; /* fondamentale su mobile */
 }
 
-.site-logo {
-  height: 55px;      /* ← regola qui la dimensione */
+.site-logo{
+  height: 52px;
   width: auto;
+  display: block;
 }
-
 
 .nav{
   display:flex;
-  gap: 14px;
+  gap: 10px;
   flex-wrap: wrap;
   font-size: 15px;
 }
+
 .nav a{
   text-decoration: none;
-  padding: 6px 10px;
+  padding: 8px 10px;
   border-radius: 10px;
   border: 1px solid transparent;
 }
+
 .nav a[aria-current="page"]{
   border-color: var(--line);
   background: #fafafa;
 }
 
-main{ padding: 26px 0 50px; }
+main{ padding: 22px 0 46px; }
 
-h1{ font-size: 30px; margin: 0 0 10px; }
-h2{ font-size: 20px; margin: 28px 0 10px; }
+h1{ font-size: 30px; margin: 0 0 10px; line-height: 1.15; }
+h2{ font-size: 20px; margin: 26px 0 10px; line-height: 1.2; }
 p{ margin: 10px 0; color: var(--fg); }
 .muted{ color: var(--muted); }
 
 .card{
   border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 16px 16px;
+  border-radius: var(--radius);
+  padding: 16px;
   margin: 14px 0;
-  background: #fff;
+  background: var(--card);
 }
 
 .list-tight{ margin: 8px 0; padding-left: 18px; }
@@ -85,37 +95,79 @@ footer{
   color: var(--muted);
 }
 
-.page-image {
-  max-width: 500px;
+/* --- Images --- */
+img{ max-width: 100%; height: auto; display: block; }
+
+.page-image{
   width: 100%;
-  height: auto;
-  display: block;
+  max-width: 800px;
   margin: 0 auto;
   border-radius: 12px;
 }
 
-.image-row {
+/* "hero" / random image: same height, crop nicely */
+.hero-image{
+  width: 100%;
+  max-width: 560px;
+  height: var(--hero-h);
+  margin: 0 auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* image rows: wrap on small screens */
+.image-row,
+.image-row-sides{
   display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;           /* spazio tra le due immagini */
-}
-
-.image-row img {
-  height: 220px;       /* ← cambia questo valore per più grande/piccolo */
-  width: auto;
-  border-radius: 12px;
-}
-
-
-.image-row-sides {
-  display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 0 50px;   /* margine interno */
+  padding: 0;
 }
 
-.image-row-sides img {
-  height: 220px;
+.image-row img,
+.image-row-sides img{
+  height: var(--row-h);
   width: auto;
   border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Make long lists readable on mobile */
+ul{ word-break: break-word; }
+
+/* Optional: nicer spacing for Word-pasted content */
+.MsoNormal{ margin: 10px 0; }
+
+/* --- Mobile breakpoint --- */
+@media (max-width: 600px){
+  :root{
+    --pad: 14px;
+    --hero-h: 190px;
+    --row-h: 150px;
+  }
+
+  header{ padding: 12px 0; }
+
+  .header-row{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav{
+    width: 100%;
+    justify-content: center;
+  }
+
+  h1{ font-size: 26px; }
+  h2{ font-size: 18px; }
+
+  /* images in rows become full-width cards */
+  .image-row img,
+  .image-row-sides img{
+    width: 100%;
+    height: auto;
+    max-width: 520px;
+  }
 }

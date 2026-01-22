@@ -4,30 +4,31 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Publications — Paolo Pin</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
 
   <!-- Favicon (.ico) -->
   <link rel="icon" href="balzana.ico" type="image/x-icon">
   <link rel="shortcut icon" href="balzana.ico" type="image/x-icon">
 
+  <link rel="stylesheet" href="style.css" />
+</head>
 
 <body>
 <header>
   <div class="container header-row">
     <div class="header-left">
-      <img src="img/logo_unisi.jpg" alt="University of Siena" class="site-logo">
+      <img src="img/logo_unisi.jpg"
+           alt="University of Siena"
+           class="site-logo">
     </div>
 
     <nav class="nav" aria-label="Primary">
       <a href="index.html">Home</a>
       <a href="research.html">Research</a>
-      <a href="publications.html">Publications</a>
+      <a href="publications.html" aria-current="page">Publications</a>
       <a href="teaching.html">Teaching</a>
     </nav>
   </div>
 </header>
-
 
   <main class="container">
     <h1>Publications</h1>
@@ -67,7 +68,7 @@
       <li><a href="https://www.sciencedirect.com/science/article/pii/S0899825617301033" target="_blank" rel="noopener">The Stochastic Stability of Decentralized Matching on a Graph</a> (2018), with Leonardo Boncinelli, Games and Economic Behavior 108, 239-244;</li>
       <li><a href="https://www.sciencedirect.com/science/article/pii/S0304387817301074" target="_blank" rel="noopener">Ties that Bind: Network Redistributive Pressure and Economic Decisions in Village Economies</a> (2018), with Salvatore Di Falco, Francesco Feri and Xavier Vollenweider, Journal of Development Economics 123, 123-131;</li>
       <li><a href="https://www.nature.com/articles/s41562-017-0190-6" target="_blank" rel="noopener">Contagious disruptions and complexity traps in economic development</a> (2017), with Matthew Bonds, Charles Brummitt, Kenan Huremovic and Fernando Vega Redondo, Nature Human Behaviour 1, 665-672;</li>
-      <li><a href="https://www.sciencedirect.com/science/article/pii/S0165188917301380" target="_blank" rel="noopener">Constrained Mobility and the Evolution of Efficient Outcomes</a> (2017), with Elke Weidenholzer and Simon Weidenholzer, Journal of Economic Dynamics and Control 82, 165-175;</li>
+      <li><a href="https://www.sciencedirect.com/science/article/pii/S0167268121000159" target="_blank" rel="noopener">Constrained Mobility and the Evolution of Efficient Outcomes</a> (2017), with Elke Weidenholzer and Simon Weidenholzer, Journal of Economic Dynamics and Control 82, 165-175;</li>
       <li><a href="https://www.sciencedirect.com/science/article/pii/S016726811630097X" target="_blank" rel="noopener">Friendship Network in the Classroom: Parents Bias and Peer Effects</a> (2016), with Fabio Landini, Natalia Montinari and Marco Piovesan, Journal of Economic Behavior and Organization 129, 56-73;</li>
       <li><a href="https://www.sciencedirect.com/science/article/pii/S0014292116300058" target="_blank" rel="noopener">Paying Positive to Go Negative: Advertisers&#x27; Competition and Media Reports</a> (2016), with Andrea Blasco and Francesco Sobbrio, European Economic Review 83, 243-261;</li>
       <li><a href="https://www.sciencedirect.com/science/article/pii/S0022053115001258" target="_blank" rel="noopener">Cooperation, Punishment and Immigration</a> (2015) with Brian Rogers, Journal of Economic Theory 160, 72-101;</li>
@@ -109,14 +110,13 @@
     </ul>
   </main>
 
-<div class="card">
-  <img src="img/banks.png"
-       class="page-image"
-       style="max-width:800px;"
-       alt="">
-</div>
+<footer>
+  <div class="container">© <span id="y"></span> Paolo Pin</div>
+</footer>
 
-  <footer><div class="container">© <span id="y"></span> Paolo Pin</div></footer>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
