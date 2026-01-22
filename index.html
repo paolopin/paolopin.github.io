@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Paolo Pin</title>
+
+  <!-- Favicon (.ico) -->
+  <link rel="icon" href="balzana.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="balzana.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Paolo Pin — Professor of Economics. Research on networks, game theory, experiments, and complex networks." />
+</head>
+<body>
+<header>
+  <div class="container header-row">
+    <div class="header-left">
+      <img src="img/logo_unisi.jpg" alt="University of Siena" class="site-logo">
+    </div>
+
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="publications.html">Publications</a>
+      <a href="teaching.html">Teaching</a>
+    </nav>
+  </div>
+</header>
+
+
+  <main class="container">
+    <h1>Paolo Pin</h1>
+    <p class="muted">
+      Professor of Economics, Department of Economics and Statistics, University of Siena
+    </p>
+
+    <!-- Random image (changes at every page load): img/foto0.jpg ... img/foto9.jpg -->
+    <div class="card">
+<img id="randomImage"
+     src=""
+     alt=""
+     style="height:260px; width:auto; border-radius:12px; display:block; margin: 0 auto;" />
+
+
+    <div class="card">
+      <p>
+        <strong>Contact</strong><br/>
+        Piazza San Francesco 7, Siena (Italy)<br/>
+        Email: <a href="mailto:paolo.pin@unisi.it">paolo.pin@unisi.it</a>
+      </p>
+    </div>
+
+    <h2>Short bio</h2>
+    <p>
+      I mostly work on the economics of social networks, with game theory models,
+      experiments, and the analysis of complex networks.
+    </p>
+
+    <h2>Links</h2>
+    <ul class="list-tight">
+      <li><a href="research.html">Research</a> </li>
+      <li><a href="publications.html">Publications</a> </li>
+      <li><a href="teaching.html">Teaching</a> </li>
+<li>
+  <a href="https://www.dropbox.com/scl/fi/sbpbph85wnnaozds1cyr4/Cv_PaoloPin.pdf?rlkey=ugko8n6gb81hmcjv8xpoqn2ny&dl=0"
+     target="_blank" rel="noopener">
+    CV (PDF)
+  </a>
+</li>
+
+    </ul>
+  </main>
+
+
+<div class="card">
+  <img src="img/murales.jpg" class="page-image" alt="">
+</div>
+
+
+  <footer>
+    <div class="container">
+      © <span id="y"></span> Paolo Pin · Last updated: <span id="d"></span>
+    </div>
+  </footer>
+
+  <script>
+    // Footer dates
+    const now = new Date();
+    document.getElementById('y').textContent = now.getFullYear();
+    document.getElementById('d').textContent = now.toISOString().slice(0,10);
+
+    // Random image rotation: img/foto0.jpg ... img/foto9.jpg
+    const n = 10; // number of images (0..9)
+    const k = Math.floor(Math.random() * n);
+    document.getElementById("randomImage").src = `img/foto${k}.jpg`;
+  </script>
+</body>
+</html>
+
