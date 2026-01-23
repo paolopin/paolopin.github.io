@@ -110,7 +110,9 @@
     </ul>
 
 <div class="card">
-  <img src="img/banks.png" alt="Banks network" class="page-image">
+  <img id="randomImage"
+       class="page-image"
+       alt="">
 </div>
 
   </main>
@@ -120,8 +122,22 @@
 </footer>
 
 <script>
-  document.getElementById('y').textContent = new Date().getFullYear();
+  const now = new Date();
+
+  const y = document.getElementById('y');
+  if (y) y.textContent = now.getFullYear();
+
+  const d = document.getElementById('d');
+  if (d) d.textContent = now.toISOString().slice(0,10);
+
+  const nImage = 10;
+  const i = Math.floor(Math.random() * nImage);
+
+  const img = document.getElementById("randomImage");
+  if (img) img.src = `img/image${i}.jpg`;
 </script>
+
+
 
 </body>
 </html>

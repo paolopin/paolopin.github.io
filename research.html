@@ -76,19 +76,33 @@ member of the </span><a href="https://bidsa.unibocconi.eu/" target="_blank"><spa
 </ul>
 
 <div class="card">
-  <div class="image-row-sides">
-    <img src="img/ugo.png" alt="">
-    <img src="img/only_soc.jpg" alt="">
-  </div>
+  <img id="randomImage"
+       class="page-image"
+       alt="">
 </div>
+
 
 </main>
 
 <footer>
   <div class="container">© <span id="y"></span> Paolo Pin</div>
 </footer>
+
 <script>
-  document.getElementById('y').textContent = new Date().getFullYear();
+  const now = new Date();
+
+  const y = document.getElementById('y');
+  if (y) y.textContent = now.getFullYear();
+
+  const d = document.getElementById('d');
+  if (d) d.textContent = now.toISOString().slice(0,10);
+
+  const nImage = 10;
+  const i = Math.floor(Math.random() * nImage);
+
+  const img = document.getElementById("randomImage");
+  if (img) img.src = `img/image${i}.jpg`;
 </script>
+
 </body>
 </html>

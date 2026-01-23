@@ -41,12 +41,11 @@
   </p>
 
   <!-- Random image (changes at every page load): img/foto0.jpg ... img/foto9.jpg -->
-  <div class="card">
-    <img id="randomImage"
-         src=""
-         alt=""
-         class="hero-image" />
-  </div>
+<div class="card">
+  <img id="randomFoto"
+       class="hero-image"
+       alt="">
+</div>
 
   <div class="card">
     <p>
@@ -80,7 +79,7 @@
 </main>
 
 <div class="card">
-  <img src="img/murales.jpg"
+  <img id="randomImage"
        class="page-image"
        alt="">
 </div>
@@ -91,17 +90,24 @@
   </div>
 </footer>
 
+
 <script>
   // Footer dates
   const now = new Date();
   document.getElementById('y').textContent = now.getFullYear();
   document.getElementById('d').textContent = now.toISOString().slice(0,10);
 
-  // Random image rotation: img/foto0.jpg ... img/foto9.jpg
-  const n = 10;
-  const k = Math.floor(Math.random() * n);
-  document.getElementById("randomImage").src = `img/foto${k}.jpg`;
+  // FOTO random: foto0.jpg ... foto9.jpg
+  const nFoto = 10;
+  const f = Math.floor(Math.random() * nFoto);
+  document.getElementById("randomFoto").src = `img/foto${f}.jpg`;
+
+  // IMAGE random: image0.jpg ... image9.jpg
+  const nImage = 10;
+  const i = Math.floor(Math.random() * nImage);
+  document.getElementById("randomImage").src = `img/image${i}.jpg`;
 </script>
+
 
 </body>
 </html>
