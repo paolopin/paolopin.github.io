@@ -130,7 +130,7 @@ img{ max-width: 100%; height: auto; display: block; }
 .image-row-sides img{
   height: var(--row-h);
   width: auto;
-  border-radius: 12px;
+  border-radius: 20px;
   object-fit: cover;
 }
 
